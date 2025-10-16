@@ -41,3 +41,35 @@ p, table, a, li {
     float: left;
     margin-right: 30px;
 }
+
+.header {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    font-size: 1.05em;
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+#pokke-button {
+    float: right;
+}
