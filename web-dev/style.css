@@ -51,13 +51,16 @@ p, table, a, li {
 }
 
 .button {
+    display: inline-block;
     background-color: black;
     color: white;
     font-family: 'Cinzel', 'Times New Roman', serif;
     font-size: 1.05em;
-    padding: 10px 10px;
+    padding: 10px 15px;
+    margin: 5px 8px;
     border: 1px solid white;
     border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
