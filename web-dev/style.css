@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=EB+Garamond:wght@400;600&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    margin: 20px;
+}
+
+h1 {
+    color: white;
+    font-family: 'Playfair Display', 'Cinzel', serif;
+    font-size: 2.5em;
+  
+}
+
+h2, h3, h4 {
+    color: white;
+    font-family: 'Cinzel', 'EB Garamond', serif;
+
+}
+
+p, table, a, li {
+    color: white;
+    font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+    font-size: 1.1em;
+}
+
+.portrait {
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.6);
+}
+
+#cb-pic {
+    float: left;
+    margin-right: 30px;
+}
+
+.header {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    font-size: 1.05em;
+    padding: 10px 15px;
+    margin: 5px 8px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+#pokke-button {
+    float: right;
+}
