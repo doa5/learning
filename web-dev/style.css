@@ -1,5 +1,7 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=EB+Garamond:wght@400;600&display=swap');
 
+/* Global Styles */
 body {
     background-color: black;
     color: white;
@@ -26,19 +28,7 @@ p, table, a, li {
     font-size: 1.1em;
 }
 
-.portrait {
-    border: 5px solid white;
-    border-radius: 10px;
-    width: 300px;
-    height: auto;
-    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.6);
-}
-
-#cb-pic {
-    float: left;
-    margin-right: 30px;
-}
-
+/* Header and Footer Styles */
 .header {
     text-align: center;
 }
@@ -47,6 +37,28 @@ p, table, a, li {
     text-align: center;
 }
 
+/* Image Styles */
+.portrait {
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.6);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#cb-pic {
+    float: left;
+    margin-right: 20px;
+}
+
+#pokke-pic {
+    float: right;
+    margin-left: 20px;
+}
+
+/* Button Styles */
 .button {
     display: inline-block;
     background-color: black;
