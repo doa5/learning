@@ -32,6 +32,10 @@ p::selection, table::selection, a::selection, li::selection, h1::selection, h2::
     background-color: rgb(255, 255, 255);
     color: black;
 }
+img {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
 
 /* Header and Footer Styles */
 .header {
@@ -51,9 +55,11 @@ p::selection, table::selection, a::selection, li::selection, h1::selection, h2::
     box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.6);
     margin-top: 10px;
     margin-bottom: 20px;
+    animation-name: slideIn;
+    animation-duration: 1s;
 }
 
-#macafe-pic {
+.float {
     float: right;
     margin-left: 20px;
 }
@@ -63,9 +69,8 @@ p::selection, table::selection, a::selection, li::selection, h1::selection, h2::
     margin-right: 20px;
 }
 
-#pokke-pic {
-    float: right;
-    margin-left: 20px;
+#macafewave-pic {
+    width: 500px;
 }
 
 /* Button Styles */
@@ -86,15 +91,15 @@ p::selection, table::selection, a::selection, li::selection, h1::selection, h2::
 
 .button:hover {
     background-color: #222;
+    transform: translateY(-2px) scale(1.035);
 }
 
 .button:active {
     transform: scale(0.99);
 }
 
-#pokke-button {
-    float: right;
-}
+
+
 /* List Styles */
 li {
     padding: 2px;
@@ -120,6 +125,7 @@ section {
   margin-top: -60px;
 }
 
+/* Image Gallery Styles */
 .image-container {
   display: inline-block;
   margin: 10px;
@@ -143,4 +149,15 @@ section {
 .image-gallery {
   text-align: center;
   margin: 20px 0;
+}
+
+/* Animation for images */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
