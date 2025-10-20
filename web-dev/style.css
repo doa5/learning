@@ -53,6 +53,11 @@ p::selection, table::selection, a::selection, li::selection, h1::selection, h2::
     margin-bottom: 20px;
 }
 
+#macafe-pic {
+    float: right;
+    margin-left: 20px;
+}
+
 #cb-pic {
     float: left;
     margin-right: 20px;
