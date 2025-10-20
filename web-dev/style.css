@@ -158,6 +158,55 @@ section {
 }
 
 @keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; }
+  from { transform: translateY(5px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+/* Simple Form Styles */
+.contact-form {
+  max-width: 500px;
+  padding: 0px;
+  /* Removed margin: 0 auto to make it left-aligned */
+}
+
+.form-label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.form-radio,
+.form-checkbox {
+  width: auto;
+  margin-right: 5px;
+}
+
+.form-submit,
+.form-reset {
+  background-color: #333;
+  border: 1px solid white;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.form-submit:hover,
+.form-reset:hover {
+  background-color: #666;
 }
