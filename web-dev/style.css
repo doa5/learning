@@ -99,7 +99,6 @@ img {
 }
 
 
-
 /* List Styles */
 li {
     padding: 2px;
@@ -162,11 +161,10 @@ section {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Simple Form Styles */
+/* Form Styles */
 .contact-form {
   max-width: 500px;
   padding: 0px;
-  /* Removed margin: 0 auto to make it left-aligned */
 }
 
 .form-label {
