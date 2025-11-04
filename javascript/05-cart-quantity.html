@@ -18,7 +18,7 @@
   <!-- Plus operations -->
   
   <button onclick="
-  if ((cartQuantity + 1) >= 10) {
+  if (cartQuantity++ > 10) {
     alert('The cart is full.')
   }
   else {
@@ -30,7 +30,7 @@
   </button>
 
   <button onclick="
-  if ((cartQuantity + 2) >= 10) {
+  if (cartQuantity + 2 > 10) {
     alert('The cart is full.')
   }
   else {
@@ -42,7 +42,7 @@
   </button>
 
   <button onclick="
-  if ((cartQuantity + 3) >= 10) {
+  if (cartQuantity + 3 > 10) {
     alert('The cart is full.')
   }
   else {
@@ -54,7 +54,7 @@
   </button>
 
   <button onclick="
-  if ((cartQuantity + 4) >= 10) {
+  if (cartQuantity + 4 >= 10) {
     alert('The cart is full.')
   }
   else {
@@ -66,7 +66,7 @@
   </button>
 
   <button onclick="
-  if ((cartQuantity + 5) >= 10) {
+  if (cartQuantity + 5 >= 10) {
     alert('The cart is full.')
   }
   else {
@@ -80,7 +80,7 @@
   <!-- Minus operations -->
 
   <button onclick="
-  if ((cartQuantity - 1) <= 0){
+  if (cartQuantity - 1 < 0){
     alert('Not enough items in cart.')
   }
   else {
@@ -92,7 +92,7 @@
   </button>
 
   <button onclick="
-  if ((cartQuantity - 2) <= 0){
+  if (cartQuantity - 2 < 0){
     alert('Not enough items in cart.')
   }
   else {
@@ -104,7 +104,7 @@
   </button>
 
   <button onclick="
-  if ((cartQuantity - 3) <= 0){
+  if (cartQuantity - 3 < 0){
     alert('Not enough items in cart.')
   }
   else {
