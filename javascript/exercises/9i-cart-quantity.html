@@ -2,19 +2,10 @@
 <html lang="en">
 
 <head>
-  <title>Cart Quantity</title>
+  <title>Exercise 9i</title>
 </head>
 
 <body>
-  <p>Cart Quantity</p>
-
-  <!-- Show -->
-  <button onclick="
-  console.log(`Cart Quantity: ${cartQuantity}`);
-  ">
-  Show Quantity
-  </button>
-
   <!-- Plus operations -->
   
   <button onclick="
@@ -70,12 +61,15 @@
   <!-- Reset -->
   <button onclick="
   cartQuantity = 0;
-  console.log('Cart was reset.')
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  displayCartQuantity()
   ">Reset Cart</button>
 
+  <p class="js-cart-quantity"></p>
+
   <script>
-    let cartQuantity = 0;
+    let cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || 0;
+
+    displayCartQuantity()
 
     function updateCartQuantity(change) {
       if (cartQuantity + change > 10) {
@@ -89,8 +83,15 @@
       }
 
       cartQuantity += change;
-      console.log(`Cart quantity: ${cartQuantity}`);
+      localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity))
+      displayCartQuantity()
     }
+
+    function displayCartQuantity() {
+      document.querySelector('.js-cart-quantity')
+        .innerText = `Cart quantity: ${cartQuantity}`
+    }
+      
   </script>
 </body>
 </html>

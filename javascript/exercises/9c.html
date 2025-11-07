@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercise 9c</title>
+</head>
+
+<body>
+  <button onclick="
+    displayChoice('heads')
+    ">heads</button>
+
+  <button onclick="
+  displayChoice('tails')
+  ">tails</button>
+  
+  <p class="js-p"></p>
+
+  <script>
+    function displayChoice(choice) {
+      document.querySelector('.js-p').innerText = `You chose: ${choice}`
+    }
+  </script>
+
+</body>
+</html>
