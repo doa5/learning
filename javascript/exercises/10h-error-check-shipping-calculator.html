@@ -41,6 +41,10 @@
       cursor: pointer;
     }
     
+    .error {
+      color: red;
+    }
+    
   </style>
 </head>
 
@@ -76,9 +80,17 @@
       const inputElement = document.querySelector('.js-cost-input');
       let cost = Number(inputElement.value);
       const totalCost = document.querySelector('.js-total-cost')
+
+      if (cost < 0) {
+      totalCost.classList.add('error');
+      totalCost.innerHTML = 'Error: cost cannot be less than £0';
+      return;
+      }
+
+      totalCost.classList.remove('error')
+
       if (cost < 40) {
         cost += 10;
-        console.log(cost);
       }
 
       totalCost.innerHTML = `£${cost}`;
