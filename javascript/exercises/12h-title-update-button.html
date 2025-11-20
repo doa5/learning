@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>App</title>
+</head>
+<body>
+  <button onclick="updateNotification()">Add</button>
+  <button onclick="removeNotification()">Remove</button>
+  
+  <script>
+    let notification = 1
+
+    intervalID = setInterval(function() {
+        if (document.title === 'App' && notification === 1) {
+          document.title = `(${notification}) New message`
+        } else if (document.title === 'App' && notification > 1) {
+          document.title = `(${notification}) New messages`
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+
+    function updateNotification() {
+      ++notification
+    }
+
+    function removeNotification() {
+      notification = --notification < 0 ? 0 : notification
+    }
+  </script>
+</body>
+</html>

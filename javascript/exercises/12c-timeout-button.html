@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+  <button class="js-timeout-button" onclick="
+    startTimeout()
+    ">Start</button>
+  <script>
+    function startTimeout() {
+      document.querySelector('.js-timeout-button')
+        .innerText = 'Loading'
+      setTimeout(function() {document.querySelector('.js-timeout-button')
+        .innerText = 'Finished'}, 3000)
+    }
+
+  </script>
+</body>
+</html>
