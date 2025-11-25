@@ -10,7 +10,7 @@
     let notification = 1
 
     function refreshTitle() {
-      intervalID = setInterval(function() {document.title = `(${notification}) New messages`}, 1000)
+      intervalID = setInterval(() => {document.title = `(${notification}) New messages`}, 1000)
     }
 
     function updateNotification() {

@@ -6,16 +6,6 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
-/*
-if (!score) {
-  score = {
-    win: 0,
-    loss: 0,
-    tie: 0
-  };
-}
-*/
-
 function pickComputerMove() {
   const randomNumber = Math.random();
   let result = '';
@@ -43,9 +33,13 @@ function autoPlay() {
       playGame(playerMove)
     }, 1000)
     isAutoPlaying = true;
+    document.querySelector('.js-auto-play-button')
+      .innerHTML= 'Stop Playing'
   } else {
     clearInterval(intervalID)
     isAutoPlaying = false;
+    document.querySelector('.js-auto-play-button')
+      .innerHTML= 'Auto Play'
   }
 }
 
@@ -59,7 +53,7 @@ document.querySelector('.js-paper-button')
   .addEventListener('click', () => playGame('paper'))
 
 document.querySelector('.js-auto-play-button')
-  .addEventListener('click', autoPlay)
+  .addEventListener('click', () => autoPlay())
 
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'r') {
@@ -68,8 +62,43 @@ document.body.addEventListener('keydown', (event) => {
       playGame('paper')
     } else if (event.key === 's') {
       playGame('scissors')
+    } else if (event.key === 'a') {
+      autoPlay()
+    } else if (event.key === 'Backspace') {
+      confirmReset()
     }
 })
+
+document.querySelector('.js-reset-score-button')
+  .addEventListener('click', () => confirmReset())
+
+
+
+function confirmReset() {
+  document.querySelector('.js-confirm-reset')
+    .innerHTML = `<p>Are you sure you want to reset the score?</p>
+    <button class="js-reset reset-confirm-button">Yes</button>
+    <button class="js-dont-reset reset-confirm-button">No</button>
+    `
+   document.querySelector('.js-reset')
+    .addEventListener('click', () => {
+      resetScore()
+      document.querySelector('.js-confirm-reset').innerHTML = ''
+    })
+
+  document.querySelector('.js-dont-reset')
+    .addEventListener('click', () => {
+      document.querySelector('.js-confirm-reset').innerHTML = ''
+    })
+}
+
+function resetScore() {
+  score.win = 0
+  score.loss = 0
+  score.tie = 0
+  updateScoreElement()
+  localStorage.removeItem('score')
+}
 
 function playGame(playerMove) {
   let result = '';

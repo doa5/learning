@@ -3,24 +3,26 @@
 <head></head>
 <body>
 
-  <button class="js-add-to-cart" onclick="
-    clearTimeout()
-    startTimeout()
-    ">Add to cart</button>
+  <button class="js-add-to-cart">Add to cart</button>
 
   <p class="js-display"></p>
 
   <script>
     let timeoutID
 
+    const addToCartElement = document.querySelector('.js-add-to-cart')
+    const displayElement = document.querySelector('.js-display')
+
+    addToCartElement.addEventListener('click', startTimeout)
+
     function startTimeout() {
-      document.querySelector('.js-display')
-        .innerText = 'Added'
+      displayElement.innerText = 'Added'
       
       clearTimeout(timeoutID)
 
-      timeoutID = setTimeout(function() {document.querySelector('.js-display')
-        .innerText = ''}, 2000)
+      timeoutID = setTimeout(() => {
+        displayElement.innerText = ''
+      }, 2000)
     }
 
   </script>

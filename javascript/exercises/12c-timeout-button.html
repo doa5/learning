@@ -3,15 +3,18 @@
 <head></head>
 <body>
 
-  <button class="js-timeout-button" onclick="
-    startTimeout()
-    ">Start</button>
+  <button class="js-timeout-button">Start</button>
   <script>
+    const buttonElement = document.querySelector('.js-timeout-button') 
+    
+    buttonElement.addEventListener('click', startTimeout)
+
     function startTimeout() {
-      document.querySelector('.js-timeout-button')
-        .innerText = 'Loading'
-      setTimeout(function() {document.querySelector('.js-timeout-button')
-        .innerText = 'Finished'}, 3000)
+      buttonElement.innerText = 'Loading'
+
+      setTimeout(() => {
+        buttonElement.innerText = 'Finished'
+      }, 3000)
     }
 
   </script>
