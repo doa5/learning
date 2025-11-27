@@ -61,6 +61,19 @@ const products = [
     ]
   },
   {
+    id: "cbid",
+    image: "images/products/cb_figure.webp",
+    name: "MR. C.B. Figure",
+    rating: {
+      stars: 5,
+      count: 15831
+    },
+    pricePence: 24000,
+    keywords: [
+      "figure"
+    ]
+  },
+  {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
     image: "images/products/6-piece-white-dinner-plate-set.jpg",
     name: "6 Piece White Dinner Plate Set",
@@ -656,5 +669,5 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
+  },
 ];

@@ -38,7 +38,7 @@ products.forEach(product => {
 
       <div class="product-spacer"></div>
 
-      <div class="added-to-cart">
+      <div class="added-to-cart js-added-to-cart-${product.id}">
         <img src="images/icons/checkmark.png">
         Added
       </div>
@@ -57,7 +57,7 @@ document.querySelector('.js-products-grid')
 document.querySelectorAll('.js-add-to-cart')
   .forEach(button => {
     button.addEventListener('click', () => {
-    const productId = button.dataset.productId
+    const {productId} = button.dataset
     
     let matchingItem
 
@@ -78,15 +78,32 @@ document.querySelectorAll('.js-add-to-cart')
         quantity
       })
     }
-
-    let cartQuantity = 0
-
-    cart.forEach(item => {
-      cartQuantity += item.quantity
-    })
-    
-    document.querySelector('.js-cart-quantity')
-      .innerHTML = cartQuantity
-    
+    enableToggle(productId)
+  
+    updateCartNumber()
     })
   })
+
+function updateCartNumber() {
+  let cartQuantity = 0
+
+  cart.forEach(item => {
+    cartQuantity += item.quantity
+  })
+  
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity
+}
+
+function enableToggle(productId) {
+  document.querySelector(`.js-added-to-cart-${productId}`).classList.add('added-to-cart-toggle')
+  let timeoutID = 0
+  if (timeoutID) {
+    clearTimeout(timeoutID)
+  }
+  timeoutID = setTimeout(() => disableToggle(productId), 2000)
+}
+
+function disableToggle(productId) {
+  document.querySelector(`.js-added-to-cart-${productId}`).classList.remove('added-to-cart-toggle')
+}
