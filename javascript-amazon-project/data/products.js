@@ -74,6 +74,32 @@ export const products = [
     ]
   },
   {
+    id: "saberid",
+    image: "images/products/saber_figure.jpg",
+    name: "Saber Figure",
+    rating: {
+      stars: 5,
+      count: 444
+    },
+    pricePence: 14444,
+    keywords: [
+      "figure"
+    ]
+  },
+  {
+    id: "cafeid",
+    image: "images/products/cafe_figure.webp",
+    name: "Manhattan Cafe Figure",
+    rating: {
+      stars: 5,
+      count: 12601
+    },
+    pricePence: 9999,
+    keywords: [
+      "figure"
+    ]
+  },
+  {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
     image: "images/products/6-piece-white-dinner-plate-set.jpg",
     name: "6 Piece White Dinner Plate Set",
