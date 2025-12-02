@@ -2,19 +2,17 @@ import {
   cart, 
   removeFromCart, 
   calculateCartQuantity,
-  updateQuantity 
+  updateQuantity,
+  updateDeliveryOption
  } from '../data/cart.js'
 import { products } from '../data/products.js'
 import { formatCurrency } from './utils/money.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 import { deliveryOptions } from '../data/deliveryOptions.js'
 
-
 const today = dayjs()
 const deliveryDate = today.add(7, 'days')
-console.log(deliveryDate.format('dddd, MMMM D'))
 
-console.log(dayjs())
 let cartSummaryHTML = ''
 updateCartQuantity()
 
@@ -101,11 +99,11 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
       'days'
     )
     const dateString = deliveryDate.format('dddd, MMMM D')
-    
+
     const isChecked = deliveryOption.id === cartItem.deliveryOptionId
 
     html += `
-    <div class="delivery-option">
+    <div class="delivery-option js-delivery-option" data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}">
       <input type="radio"
         ${isChecked ? 'checked' : ''}
         class="delivery-option-input"
@@ -190,3 +188,11 @@ function handleUpdateQuantity(productId, quantityInput) {
   const container = document.querySelector(`.js-cart-item-container-${productId}`)
   container.classList.remove('is-editing-quantity')
 }
+
+document.querySelectorAll('.js-delivery-option')
+  .forEach(element => {
+    element.addEventListener('click', () => {
+      const { productId, deliveryOptionId } = element.dataset
+      updateDeliveryOption(productId, deliveryOptionId)
+    })
+  })
