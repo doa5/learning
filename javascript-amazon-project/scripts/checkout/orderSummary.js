@@ -6,7 +6,7 @@ import {
   updateDeliveryOption
  } from '../../data/cart.js'
 import { products, getProduct } from '../../data/products.js'
-import { formatCurrency } from '../utils/money.js'
+import formatCurrency from '../utils/money.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '../../data/deliveryOptions.js'
 import { renderPaymentSummary } from './paymentSummary.js'
@@ -29,7 +29,9 @@ export function renderOrderSumamry() {
     const dateString = calculateDeliveryDate(deliveryOption)
 
     cartSummaryHTML += `
-    <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
+    <div class="cart-item-container 
+    js-cart-item-container
+    js-cart-item-container-${matchingProduct.id}">
       <div class="delivery-date">
         Delivery date: ${dateString}
       </div>
@@ -45,7 +47,7 @@ export function renderOrderSumamry() {
           <div class="product-price">
             £${formatCurrency(matchingProduct.pricePence)}
           </div>
-          <div class="product-quantity">
+          <div class="product-quantity js-product-quantity-${matchingProduct.id}">
             <span class="display-product-quantity">
               Quantity: <span class="quantity-label js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
             </span>
