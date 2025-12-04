@@ -2,10 +2,12 @@ import { cart } from "../../data/cart.js"
 import { getProduct } from "../../data/products.js";
 import { getDeliveryOption } from "../../data/deliveryOptions.js";
 import formatCurrency from "../utils/money.js";
+import { calculateCartQuantity } from "../../data/cart.js";
 
 export function renderPaymentSummary() {
   let productPricePence = 0
   let shippingPricePence = 0
+  const cartQuantity = calculateCartQuantity()
   
   cart.forEach(cartItem => {
     const product = getProduct(cartItem.productId)
@@ -25,7 +27,7 @@ export function renderPaymentSummary() {
     </div>
 
     <div class="payment-summary-row">
-      <div>Items (3):</div>
+      <div>Items (${cartQuantity}):</div>
       <div class="payment-summary-money">
         £${formatCurrency(productPricePence)}
       </div>
