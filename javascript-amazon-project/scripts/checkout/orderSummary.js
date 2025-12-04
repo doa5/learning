@@ -9,9 +9,7 @@ import { products, getProduct } from '../../data/products.js'
 import { formatCurrency } from '../utils/money.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js'
-
-const today = dayjs()
-const deliveryDate = today.add(7, 'days')
+import { renderPaymentSummary } from './paymentSummary.js'
 
 export function renderOrderSumamry() {
 
@@ -125,6 +123,8 @@ export function renderOrderSumamry() {
 
         const container = document.querySelector(`.js-cart-item-container-${productId}`)
         container.remove()
+
+        renderPaymentSummary()
       })
     })
 
@@ -135,6 +135,8 @@ export function renderOrderSumamry() {
         const container = document.querySelector(`.js-cart-item-container-${productId}`)
 
         container.classList.add('is-editing-quantity')
+
+        renderPaymentSummary()
       })
     }
   )
@@ -178,6 +180,9 @@ export function renderOrderSumamry() {
 
     const container = document.querySelector(`.js-cart-item-container-${productId}`)
     container.classList.remove('is-editing-quantity')
+
+    renderOrderSumamry()
+    renderPaymentSummary()
   }
 
   document.querySelectorAll('.js-delivery-option')
@@ -186,6 +191,7 @@ export function renderOrderSumamry() {
         const { productId, deliveryOptionId } = element.dataset
         updateDeliveryOption(productId, deliveryOptionId)
         renderOrderSumamry()
+        renderPaymentSummary()
       })
     })
 }
