@@ -45,7 +45,7 @@ export function renderOrderSumamry() {
             ${matchingProduct.name}
           </div>
           <div class="product-price">
-            £${formatCurrency(matchingProduct.pricePence)}
+            ${matchingProduct.getPrice()}
           </div>
           <div class="product-quantity js-product-quantity-${matchingProduct.id}">
             <span class="display-product-quantity">
