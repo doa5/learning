@@ -66,9 +66,19 @@ function updateCartQuantity() {
     .innerHTML = calculateCartQuantity()
 }
 
+const addedTimeouts = {};
+
 function enableToggle(productId) {
   document.querySelector(`.js-added-to-cart-${productId}`).classList.add('added-to-cart-toggle')
-  const timeoutID = setTimeout(() => disableToggle(productId), 2000)
+  
+  if (addedTimeouts[productId]) {
+    clearTimeout(addedTimeouts[productId])
+  }
+  
+  addedTimeouts[productId] = setTimeout(() => {
+    disableToggle(productId)
+    delete addedTimeouts[productId]
+  }, 2000)
 }
 
 function disableToggle(productId) {
