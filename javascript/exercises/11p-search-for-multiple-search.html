@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+  <script>
+    function searchForSearch(words) {
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          return i
+        }
+      }
+      return -1
+    }
+
+    console.log(searchForSearch(['apple', 'grape', 'apple', 'apple']))
+    console.log(searchForSearch(['apple', 'search', 'apple', 'apple']))
+    console.log(searchForSearch(['apple', 'search', 'apple', 'search']))
+  </script>
+</body>
+</html>

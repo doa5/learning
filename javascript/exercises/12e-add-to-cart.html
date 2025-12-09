@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+  <button class="js-add-to-cart">Add to cart</button>
+
+  <p class="js-display"></p>
+
+  <script>
+    let timeoutID
+
+    const addToCartElement = document.querySelector('.js-add-to-cart')
+    const displayElement = document.querySelector('.js-display')
+
+    addToCartElement.addEventListener('click', startTimeout)
+
+    function startTimeout() {
+      displayElement.innerText = 'Added'
+      
+      clearTimeout(timeoutID)
+
+      timeoutID = setTimeout(() => {
+        displayElement.innerText = ''
+      }, 2000)
+    }
+
+  </script>
+</body>
+</html>

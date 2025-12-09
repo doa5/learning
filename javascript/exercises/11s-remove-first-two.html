@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+  <script>
+    function removeFirstTwoEgg(foods) {
+      const result = []
+      let eggsRemoved = 0
+      
+      foods.forEach(food => {
+        if (food === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++
+        } else {
+          result.push(food)
+        }
+      });
+
+      return result
+    }
+    
+    console.log(removeFirstTwoEgg(['egg','apple','egg','egg','ham']))
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>App</title>
+</head>
+<body>
+  <button class="js-add-button">Add</button>
+  <button class="js-remove-button">Remove</button>
+  
+  <script>
+    let notification = 1
+
+    intervalID = setInterval(() => {
+        if (document.title === 'App' && notification === 1) {
+          document.title = `(${notification}) New message`
+        } else if (document.title === 'App' && notification > 1) {
+          document.title = `(${notification}) New messages`
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+
+    function updateNotification() {
+      ++notification
+    }
+
+    function removeNotification() {
+      notification = --notification < 0 ? 0 : notification
+    }
+
+    const addButtonElement = document.querySelector('.js-add-button')
+    const removeButtonElement = document.querySelector('.js-remove-button')
+
+    addButtonElement.addEventListener('click', updateNotification)
+    removeButtonElement.addEventListener('click', removeNotification)
+  </script>
+</body>
+</html>

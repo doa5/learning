@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+  
+  <script>
+    function addOne(array) {
+      const result = []
+      array.forEach(num => {
+        result.push(++num)
+      });
+      return result
+    }
+
+    const nums = [1, 2, 3]
+    const nums2 = [-2, -1, 0, 99]
+    console.log(addOne(nums))
+    console.log(addOne(nums2))
+  </script>
+</body>
+</html>

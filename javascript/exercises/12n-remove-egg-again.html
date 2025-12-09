@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+  <script>
+   function removeEgg(words) {
+    let count = 0 
+      
+    const newArray = words.filter(word => {
+      if (count < 2 && word === 'egg') {
+        ++count
+        return false
+      }
+      return true
+    })
+
+    return newArray
+  }
+
+   console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']))
+  </script>
+</body>
+</html>

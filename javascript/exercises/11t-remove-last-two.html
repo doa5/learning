@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+  <script>
+    function removeLastTwoEgg(foods) {
+      const result = []
+      let eggsRemoved = 0
+      const reversedFoods = foods.reverse()
+      
+      reversedFoods.forEach(food => {
+        if (food === 'egg' && eggsRemoved < 2) {
+          count++
+        } else {
+          result.push(food)
+        }
+      });
+
+      return result.reverse()
+    }
+    
+    console.log(removeLastTwoEgg(['egg','apple','egg','egg','ham']))
+    
+  </script>
+</body>
+</html>

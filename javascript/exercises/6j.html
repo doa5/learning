@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercise 6j</title>
+</head>
+
+<body>
+
+  <script>
+    const randomNumber = Math.random()
+    const guess = 'Heads';
+    let result = '';
+
+    result = (randomNumber < 0.5) ? 'Heads' : 'Tails';
+
+    message = (guess === result) ? console.log(`Computer result = ${result}\nYou Win.`) : console.log(`Computer result = ${result}\nYou Lose.`);
+    console.log(message)
+  </script>
+
+</body>
+</html>

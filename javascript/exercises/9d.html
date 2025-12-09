@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercise 9d</title>
+</head>
+
+<body>
+  <input placeholder="Enter your name" class="js-input-name" onkeydown="
+    onEnter(event)
+    ">
+  <button onclick="
+  submitName()
+  ">Submit</button>
+
+  <p class="js-output-name"></p>
+
+  <script>
+    function submitName() {
+      const inputElement = document.querySelector('.js-input-name').value;
+      document.querySelector('.js-output-name').innerText = `Your name is: ${inputElement}.`;
+    }
+
+    function onEnter(event) {
+      event.key === 'Enter' && submitName();
+    }
+  </script>
+
+</body>
+</html>

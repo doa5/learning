@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercise 6f</title>
+</head>
+
+<body>
+
+  <script>
+    const randomNumber = Math.random()
+    const guess = 'Heads';
+    let result = '';
+
+    if (randomNumber < 0.5) {
+      result = 'Heads';
+    }
+    else {
+      result = 'Tails';
+    }
+
+    if (guess === result) {
+      console.log(`Computer result = ${result}`);
+      console.log('You Win.');
+    }
+    else {
+      console.log(`Computer result = ${result}`);
+      console.log('You Lose.');
+    }
+  </script>
+
+</body>
+</html>
