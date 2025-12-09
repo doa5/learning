@@ -16,7 +16,7 @@ body {
 
 .move-button {
   background-color: transparent;
-  border: 2px, solid, white;
+  border: 2px solid white;
   width: 80px;
   height: 80px;
   border-radius: 60px;
@@ -30,7 +30,7 @@ body {
 }
 
 .score {
-  margin-top: 20px
+  margin-top: 20px;
 }
 
 .reset-confirm-button,

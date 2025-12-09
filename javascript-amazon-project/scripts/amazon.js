@@ -1,6 +1,5 @@
 import { addToCart, calculateCartQuantity } from '../data/cart.js'
 import { products } from '../data/products.js'
-import formatCurrency from './utils/money.js'
 
 let productsHTML = ''
 updateCartQuantity()
@@ -67,13 +66,19 @@ function updateCartQuantity() {
     .innerHTML = calculateCartQuantity()
 }
 
+const addedTimeouts = {};
+
 function enableToggle(productId) {
   document.querySelector(`.js-added-to-cart-${productId}`).classList.add('added-to-cart-toggle')
-  let timeoutID = 0
-  if (timeoutID) {
-    clearTimeout(timeoutID)
+  
+  if (addedTimeouts[productId]) {
+    clearTimeout(addedTimeouts[productId])
   }
-  timeoutID = setTimeout(() => disableToggle(productId), 2000)
+  
+  addedTimeouts[productId] = setTimeout(() => {
+    disableToggle(productId)
+    delete addedTimeouts[productId]
+  }, 2000)
 }
 
 function disableToggle(productId) {

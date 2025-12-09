@@ -6,7 +6,7 @@
    function removeEgg(words) {
     let count = 0 
       
-    newArray = words.filter(word => {
+    const newArray = words.filter(word => {
       if (count < 2 && word === 'egg') {
         ++count
         return false
