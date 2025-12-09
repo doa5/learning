@@ -4,11 +4,9 @@ import { loadProducts, loadProductsFetch } from "../../data/products.js";
 
 describe('test suite: renderOrderSummary', () => {
 
-  beforeAll((done) => {
-    loadProductsFetch().then(() => {
-      done()
+  beforeAll(async () => {
+    await loadProductsFetch()
     })
-  })
 
   it('displays the cart', () => {
     document.querySelector('.js-test-container')
