@@ -1,20 +1,21 @@
-# learning
+# learning 
 
-just me figuring out code (╯°□°）╯
+unlimited bugs works ┐(￣ヮ￣)┌ 
 
-## what's in here
+## what's in here 
 
-- `html-css/` - web dev basics 
-- `javascript/` - making browsers cry
+- `html-css/` - orbment setup for web 
+- `javascript/` - when browsers cry 
+- `javascript-amazon-project` - mystic eyes of debug perception  
 
-## why this exists
+## why this exists 
 
-mostly so i can:
-- track my progress without losing my mind
-- be based with version control
-- have proof i'm learning things
-- stop rewriting the same thing 50 times
+mostly so i can: 
+- reach social link rank 10 with git 
+- be based with version control 
+- have proof i'm learning things 
+- stop rewriting the same thing 50 times 
 
----
+--- 
 
-*work in progress... always*
+*work in progress... always* 
