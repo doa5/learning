@@ -39,7 +39,7 @@ export class Car {
   }
 
   openTrunk() {
-    if (speed = 0) {
+    if (this.speed === 0) {
       this.isTrunkOpen = true
     } else {
       console.log('Car cannot be in motion when opening trunk')
@@ -51,7 +51,7 @@ export class Car {
   }
 }
 
-class RaceCar extends Car {
+export class RaceCar extends Car {
   acceleration = 0
 
   constructor(carDetails) {

@@ -124,7 +124,7 @@
   </p>
 
   <script>
-    let calculation = localStorage.getItem(JSON.parse(calculation)) || '';
+    let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
 
     function updateCalculation(sign) {
       calculation += sign;

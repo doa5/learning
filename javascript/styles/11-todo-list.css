@@ -19,7 +19,7 @@ body {
 .name-input,
 .due-date-input { 
   font-size: 15px;
-  padding: 6px
+  padding: 6px;
 }
 
 .add-todo-button {
@@ -37,5 +37,5 @@ body {
   font-size: 15px;
   cursor: pointer;
   padding-top: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }

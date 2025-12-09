@@ -20,7 +20,7 @@
   ">Scissors</button>
 
   <button onclick="
-    score.wins = 0;
+    score.win = 0;
     score.loss = 0;
     score.tie = 0;
     localStorage.removeItem('score');
@@ -46,7 +46,6 @@
 
     function pickComputerMove() {
       const randomNumber = Math.random();
-      let result = '';
       let computerMove = '';
 
       if (randomNumber >= 0 && randomNumber < 1 / 3) {

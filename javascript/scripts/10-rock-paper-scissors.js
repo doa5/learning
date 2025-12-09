@@ -18,7 +18,6 @@ if (!score) {
 
 function pickComputerMove() {
   const randomNumber = Math.random();
-  let result = '';
   let computerMove = '';
 
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
